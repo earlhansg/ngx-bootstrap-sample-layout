@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { LandingComponent } from './landing.component';
 
 import { LandingRoutingModule } from './landing-routing.module';
+import { SectionsModule } from './sections/sections.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    LandingRoutingModule
+    LandingRoutingModule,
+    SectionsModule
   ],
   declarations: [
     LandingComponent
