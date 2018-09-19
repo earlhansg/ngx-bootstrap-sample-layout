@@ -6,12 +6,14 @@ import { LandingComponent } from './landing.component';
 import { LandingRoutingModule } from './landing-routing.module';
 import { SectionsModule } from './sections/sections.module';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   imports: [
     CommonModule,
     LandingRoutingModule,
-    SectionsModule
+    SectionsModule,
+    AngularFontAwesomeModule
   ],
   declarations: [
     LandingComponent

@@ -6,7 +6,7 @@ import { AppRoutingModule } from '@app/app-routing.module';
 
 import { AppComponent } from './app.component';
 
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +14,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppBootstrapModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
