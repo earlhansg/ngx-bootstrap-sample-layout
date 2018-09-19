@@ -11,22 +11,60 @@
   <!-- </div> -->
   
   <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div dropdown [autoClose]="false">
+      <button class="navbar-toggler custom-toggler border-0"
+              dropdownToggle
+              type="button" 
+              data-toggle="collapse"
+              data-target="#collapsibleNavbar"
+              aria-controls="dropdown-basic">
+            <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <ul id="dropdown-basic"
+          class="dropdown-menu dropdown-menu-right"
+          *dropdownMenu 
+          role="menu" 
+          aria-labelledby="button-basic">
+          <li role="menuitem">
+            <a class="dropdown-item" href="#">Sync</a>
+          </li>
+          <li role="menuitem">
+            <a class="dropdown-item" href="#">Calendar</a>
+          </li>
+          <li role="menuitem">
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+          <li class="divider dropdown-divider"></li>
+          <div class="search">
+              <span class="fa fa-search"></span>
+              <input class="mr-2" placeholder="Search term">
+          </div>
+      </ul>
+  </div>
+  <!-- End of .dropdown -->
 
   <!-- Navbar links -->
-  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li> 
-    </ul>
+  <div id="collapsibleNavbar" 
+       class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link px-4" href="#">
+            <fa name="cloud-download"></fa>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-4" href="#">
+            <fa name="calendar"></fa>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-4" href="#">
+            <fa name="user"></fa>
+          </a>
+        </li> 
+      </ul>
   </div> 
+  <!-- End of .collapsibleNavbar -->
 </nav>
+<!-- End of of .navbar -->
