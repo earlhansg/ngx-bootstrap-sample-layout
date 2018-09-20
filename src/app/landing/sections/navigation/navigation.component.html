@@ -20,50 +20,44 @@
               aria-controls="dropdown-basic">
             <span class="navbar-toggler-icon"></span>
       </button>
-
+      
       <ul id="dropdown-basic"
           class="dropdown-menu dropdown-menu-right"
           *dropdownMenu 
           role="menu" 
           aria-labelledby="button-basic">
-          <li role="menuitem">
-            <a class="dropdown-item" href="#">Sync</a>
+
+          <li role="menuitem"
+              *ngFor="let listMenu of list">
+            <a class="dropdown-item"
+               [routerLink]="listMenu.href">
+                <fa [name]="listMenu.icon"></fa> 
+                <span class="ml-3"
+                      [textContent]="listMenu.title"></span>
+            </a>
           </li>
-          <li role="menuitem">
-            <a class="dropdown-item" href="#">Calendar</a>
-          </li>
-          <li role="menuitem">
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
-          <li class="divider dropdown-divider"></li>
-          <div class="search">
+          <!-- end of menuitem -->
+          <div class="search mt-2">
               <span class="fa fa-search"></span>
               <input class="mr-2" placeholder="Search term">
           </div>
       </ul>
+      <!-- End of .dropdown-basic -->
   </div>
   <!-- End of .dropdown -->
 
   <!-- Navbar links -->
   <div id="collapsibleNavbar" 
        class="collapse navbar-collapse justify-content-end">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link px-4" href="#">
-            <fa name="cloud-download"></fa>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link px-4" href="#">
-            <fa name="calendar"></fa>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link px-4" href="#">
-            <fa name="user"></fa>
-          </a>
-        </li> 
-      </ul>
+        <ul class="navbar-nav"
+            *ngFor="let listMenu of list">
+            <li class="nav-item">
+              <a class="nav-link px-4" 
+                 [routerLink]="listMenu.href">
+                 <fa [name]="listMenu.icon"></fa>
+              </a>
+            </li>
+        </ul>
   </div> 
   <!-- End of .collapsibleNavbar -->
 </nav>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MenuItemListService } from './services/menu-item-list.service';
+
 
 
 @NgModule({
@@ -8,7 +10,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   declarations: [],
-  providers: [],
+  providers: [ MenuItemListService ],
   exports: [
     CommonModule
   ],

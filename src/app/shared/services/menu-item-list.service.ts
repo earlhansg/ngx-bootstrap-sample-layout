@@ -8,7 +8,7 @@ import { menus } from '../data/menu-item-list';
 
 
 @Injectable()
-export class UserService {
+export class MenuItemListService {
 
   constructor() { }
 

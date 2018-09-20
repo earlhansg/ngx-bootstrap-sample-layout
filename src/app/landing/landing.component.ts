@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MenuItemModel } from '@app/shared/interfaces/menu-item-model';
+
+import { MenuItemListService } from '@app/shared/services/menu-item-list.service';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  menus : MenuItemModel[] = [];
 
-  ngOnInit() {
+  constructor(private menuItemListService: MenuItemListService) { }
+
+  ngOnInit(): void {
+    this.fetchMenus();
+  }
+
+  fetchMenus(): void {
+    this.menuItemListService
+      .fetchMenus()
+      .subscribe(response => this.menus = response);
   }
 
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { MenuItemModel } from '@app/shared/interfaces/menu-item-model';
 
 @Component({
   selector: 'app-navigation',
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-
+  @Input() list: MenuItemModel[];
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit(): void {}
 
 }
