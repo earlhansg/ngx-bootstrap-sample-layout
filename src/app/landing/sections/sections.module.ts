@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppBootstrapModule } from '@app/core/app-bootstrap.module';
 
 import { NavigationComponent } from './navigation/navigation.component';
-
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { SubHeaderComponent } from './sub-header/sub-header.component';
 
 
 
@@ -17,8 +17,14 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AngularFontAwesomeModule,
     AppBootstrapModule
   ],
-  declarations: [NavigationComponent],
-  exports: [NavigationComponent],
+  declarations: [
+    NavigationComponent,
+    SubHeaderComponent
+  ],
+  exports: [
+    NavigationComponent,
+    SubHeaderComponent
+  ],
   providers: [],
   entryComponents: []
 })
