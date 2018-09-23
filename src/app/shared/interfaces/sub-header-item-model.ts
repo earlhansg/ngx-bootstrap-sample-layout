@@ -45,10 +45,3 @@ export interface TotalFemalesModel {
     previousTotal : number;
     currentTotal  : number;
   }
-export interface TotalConnectionsModel {
-    title         : string;
-    icon         ?: string;
-    href         ?: string;
-    previousTotal : number;
-    currentTotal  : number;
-  }
