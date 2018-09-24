@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 
 import {
     TotalUsersModel,
@@ -11,27 +11,20 @@ import {
 
 import { users, average, males, females, collection } from '../data/sub-header-item-list';
 
-
 @Injectable()
 export class SubHeaderService {
 
   constructor() { }
 
-  fetchUsers(): Observable<TotalUsersModel[]> {
-    return of(users);
-  }
-  fetchAverage(): Observable<AverageTimeModel[]> {
-    return of(average);
-  }
-  fetchMales(): Observable<TotalMalesModel[]> {
-    return of(males);
-  }
-  fetchFemales(): Observable<TotalFemalesModel[]> {
-    return of(females);
-  }
-  fetchTotalCollections(): Observable<TotalCollectionsModel[]> {
-    return of(collection);
-  }
+  fetchSubHeaderData(): Observable<any[]> {
+    const response1 = users;
+    const response2 = average;
+    const response3 = males;
+    const response4 = females;
+    const response5 = collection;
 
+    return forkJoin([response1, response2, response3, response4, response5]);
+  }
 
 }
+

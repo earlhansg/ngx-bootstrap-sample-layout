@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MenuItemModel } from '@app/shared/interfaces/menu-item-model';
 
+
 import {
   TotalUsersModel,
   AverageTimeModel,
@@ -20,26 +21,35 @@ import { SubHeaderService } from '@app/shared/services/sub-header-item-list.serv
 export class LandingComponent implements OnInit {
 
   menus : MenuItemModel[] = [];
-  users : TotalUsersModel[] = [];
+  // users : TotalUsersModel[] = [];
+
+  public users      : TotalUsersModel[];
+  public average    : AverageTimeModel[];
+  public males      : TotalMalesModel[];
+  public females    : TotalFemalesModel[];
+  public collections: TotalCollectionsModel[];
 
   constructor(private menuItemListService: MenuItemListService,
               private subHeaderService: SubHeaderService) { }
 
   ngOnInit(): void {
     this.fetchMenus();
-    this.fetchUsers();
+
+    this.subHeaderService.fetchSubHeaderData().subscribe(responseList => {
+      this.users       = responseList[0];
+      this.average     = responseList[1];
+      this.males       = responseList[2];
+      this.females     = responseList[3];
+      this.collections = responseList[4];
+      console.log('mydata' , responseList);
+  });
+
   }
 
   fetchMenus(): void {
     this.menuItemListService
       .fetchMenus()
       .subscribe(response => this.menus = response);
-  }
-
-  fetchUsers(): void {
-    this.subHeaderService
-      .fetchUsers()
-      .subscribe(response => console.log(response));
   }
 
 }
