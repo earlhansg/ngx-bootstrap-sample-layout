@@ -10,8 +10,8 @@ export interface AverageTimeModel {
     title           : string;
     icon           ?: string;
     href           ?: string;
-    previousAverage : number;
-    currentAverage  : number;
+    previousTotal   : number;
+    currentTotal    : number;
   }
 
 export interface TotalMalesModel {

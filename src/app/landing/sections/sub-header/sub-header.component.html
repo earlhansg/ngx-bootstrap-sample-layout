@@ -13,80 +13,92 @@
               </div>
           </div>
         </div>
-
+      <!-- End of .col-md-6 -->
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 second-data">
-          <div id="subhead" 
+          <div id="sub-user" 
               class="mt-2 mt-md-3 cursor-pointer custom-border">
               <div class="ml-lg-4 ml-md-5 ml-sm-4 d-flex mobile-content-align">
-                <span class="second-header ml-1">
-                  <fa name="check-square-o" class="subhead-icon"></fa>Total Users</span>
-                  <span class="dot"></span>
+                <span class="second-header ml-1" 
+                      [textContent]="users.title"></span>
+                  <span class="dot user-dot"></span>
               </div>
               <div class="ml-lg-5 ml-md-5 ml-sm-5 py-1">
-                <span class="second-data-first d-block mobile-text-align">2620</span>
-                <span class="second-data-second d-block mobile-text-align">3023</span>
+                <span class="second-data-first d-block mobile-text-align"
+                      [textContent]="users.previousTotal"></span>
+                <span class="second-data-second d-block mobile-text-align"
+                      [textContent]="users.currentTotal"></span>
               </div>
           </div>
         </div>
-
+      <!-- End of .col-md-6 -->
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 second-data">
-          <div id="subhead" 
+          <div id="sub-average" 
               class="mt-2 mt-md-3 cursor-pointer custom-border">
               <div class="ml-lg-4 ml-md-5 ml-sm-4 d-flex mobile-content-align">
-                <span class="second-header ml-1">
-                  <fa name="check-square-o" class="subhead-icon"></fa>Total Users</span>
-                  <span class="dot"></span>
+                <span class="second-header ml-1" 
+                      [textContent]="average.title"></span>
+                  <span class="dot average-dot"></span>
               </div>
               <div class="ml-lg-5 ml-md-5 ml-sm-5 py-1">
-                <span class="second-data-first d-block mobile-text-align">2620</span>
-                <span class="second-data-second d-block mobile-text-align">3023</span>
+                <span class="second-data-first d-block mobile-text-align"
+                      [textContent]="average.previousTotal"></span>
+                <span class="second-data-second d-block mobile-text-align"
+                      [textContent]="average.currentTotal"></span>
               </div>
           </div>
         </div>
-
+        <!-- End of .col-md-6 -->
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 second-data">
-          <div id="subhead" 
+          <div id="sub-male" 
               class="mt-2 mt-md-3 cursor-pointer custom-border">
               <div class="ml-lg-4 ml-md-5 ml-sm-4 d-flex mobile-content-align">
-                <span class="second-header ml-1">
-                  <fa name="check-square-o" class="subhead-icon"></fa>Total Users</span>
-                  <span class="dot"></span>
+                <span class="second-header ml-1" 
+                      [textContent]="males.title"></span>
+                  <span class="dot male-dot"></span>
               </div>
               <div class="ml-lg-5 ml-md-5 ml-sm-5 py-1">
-                <span class="second-data-first d-block mobile-text-align">2620</span>
-                <span class="second-data-second d-block mobile-text-align">3023</span>
+                <span class="second-data-first d-block mobile-text-align"
+                      [textContent]="males.previousTotal"></span>
+                <span class="second-data-second d-block mobile-text-align"
+                      [textContent]="males.currentTotal"></span>
               </div>
           </div>
         </div>
-      <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 second-data">
-        <div id="subhead" 
-            class="mt-2 mt-md-3 cursor-pointer custom-border">
-            <div class="ml-lg-4 ml-md-5 ml-sm-4 d-flex mobile-content-align">
-              <span class="second-header ml-1">
-                <fa name="check-square-o" class="subhead-icon"></fa>Total Users</span>
-                <span class="dot"></span>
-            </div>
-            <div class="ml-lg-5 ml-md-5 ml-sm-5 py-1">
-              <span class="second-data-first d-block mobile-text-align">2620</span>
-              <span class="second-data-second d-block mobile-text-align">3023</span>
-            </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 second-data">
-        <div id="subhead" 
-            class="mt-2 mt-md-3 cursor-pointer custom-border">
-            <div class="ml-lg-4 ml-md-5 ml-sm-4 d-flex mobile-content-align">
-              <span class="second-header ml-1">
-                <fa name="check-square-o" class="subhead-icon"></fa>Total Users</span>
-                <span class="dot"></span>
-            </div>
-            <div class="ml-lg-5 ml-md-5 ml-sm-5 py-1">
-              <span class="second-data-first d-block mobile-text-align">2620</span>
-              <span class="second-data-second d-block mobile-text-align">3023</span>
+        <!-- End of .col-md-6 -->
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 second-data">
+            <div id="sub-female" 
+                class="mt-2 mt-md-3 cursor-pointer custom-border">
+                <div class="ml-lg-4 ml-md-5 ml-sm-4 d-flex mobile-content-align">
+                  <span class="second-header ml-1" 
+                        [textContent]="females.title"></span>
+                    <span class="dot female-dot"></span>
+                </div>
+                <div class="ml-lg-5 ml-md-5 ml-sm-5 py-1">
+                  <span class="second-data-first d-block mobile-text-align"
+                        [textContent]="females.previousTotal"></span>
+                  <span class="second-data-second d-block mobile-text-align"
+                        [textContent]="females.currentTotal"></span>
+                </div>
             </div>
         </div>
-      </div>
-
+        <!-- End of .col-md-6 -->
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 second-data">
+          <div id="sub-collection" 
+              class="mt-2 mt-md-3 cursor-pointer custom-border">
+              <div class="ml-lg-4 ml-md-5 ml-sm-4 d-flex mobile-content-align">
+                <span class="second-header ml-1" 
+                      [textContent]="collections.title"></span>
+                  <span class="dot collection-dot"></span>
+                </div>
+                <div class="ml-lg-5 ml-md-5 ml-sm-5 py-1">
+                  <span class="second-data-first d-block mobile-text-align"
+                        [textContent]="collections.previousTotal"></span>
+                  <span class="second-data-second d-block mobile-text-align"
+                        [textContent]="collections.currentTotal"></span>
+                </div>
+            </div>
+        </div>
+        <!-- End of .col-md-6 -->
     </div>
     <!-- End of .row -->
   </div>
