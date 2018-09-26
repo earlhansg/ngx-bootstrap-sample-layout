@@ -6,6 +6,7 @@ import { LandingComponent } from './landing.component';
 import { LandingRoutingModule } from './landing-routing.module';
 import { SectionsModule } from './sections/sections.module';
 import { SharedModule } from '@app/shared/shared.module';
+import { EmployeeModule } from './employee/employee.module';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -15,7 +16,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     LandingRoutingModule,
     SectionsModule,
     SharedModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    EmployeeModule
   ],
   declarations: [
     LandingComponent

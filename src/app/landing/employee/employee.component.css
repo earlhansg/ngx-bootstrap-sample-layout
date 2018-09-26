@@ -1,0 +1,55 @@
+button {
+    height: 29px;
+    font-size: 12px;
+    color: #b3b3b3;
+    border-radius: 0;
+    background-color: white;
+    border: 2px solid #d9d9d9;
+}
+
+.header-label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1100px) {
+    .nav {
+        margin-top: 32px !important;
+    }
+ }
+
+@media only screen and (max-width: 1000px) {
+    .nav {
+        display: none;
+    }
+    .col-md-3 {
+        text-align: right !important;
+    }
+    label {
+        display: none;
+    }
+ }
+
+ @media only screen and (min-width: 1000px) {
+    .btn-bars {
+        display: none;
+    }
+ }
+
+ @media only screen and (max-width: 550px) {
+    #employee {
+        margin-top: 5px;
+    }
+    .dropdown-sort {
+        text-align: center;
+    }
+    label {
+        padding-top: 12px;
+        display: block;
+    }
+    .btn-bars {
+        position: absolute;
+        margin-left: -45px;
+        margin-top: -199px;
+    }
+ }
