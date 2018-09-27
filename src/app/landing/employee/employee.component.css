@@ -36,7 +36,18 @@ button {
     }
  }
 
- @media only screen and (max-width: 550px) {
+ @media only screen and (max-width: 762px) {
+    .btn-bars {
+        position: absolute;
+        margin-left: -45px;
+        margin-top: -36px;
+    }
+    .col-md-3 {
+        padding-top: 5px;
+    }
+ }
+
+ @media only screen and (max-width: 570px) {
     #employee {
         margin-top: 5px;
     }
