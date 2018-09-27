@@ -14,20 +14,20 @@ export const header: EmployeeHeaderModel[] = [
 ];
 
 export const sideHeader: EmployeeSideHeaderModel[] = [
-    {
-      title : 'List',
-      icon : 'th-list'
-    },
-    {
-      title : 'Document',
-      icon : 'file'
-    },
-    {
-      title : 'Chart',
-      icon : 'area-chart'
-    },
-    {
-        title : 'Message',
-        icon : 'envelope-o'
-    }
-  ];
+  {
+    title : 'List',
+    icon : 'th-list'
+  },
+  {
+    title : 'Document',
+    icon : 'file'
+  },
+  {
+    title : 'Chart',
+    icon : 'area-chart'
+  },
+  {
+    title : 'Message',
+    icon : 'envelope-o'
+  }
+];

@@ -2,13 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { Observable, forkJoin } from 'rxjs';
 
-import {
-    TotalUsersModel,
-    AverageTimeModel,
-    TotalMalesModel,
-    TotalFemalesModel,
-    TotalCollectionsModel } from '../interfaces/sub-header-item-model';
-
 import { users, average, males, females, collection } from '../data/sub-header-item-list';
 
 @Injectable()

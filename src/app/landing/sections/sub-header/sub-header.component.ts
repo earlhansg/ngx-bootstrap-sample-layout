@@ -25,14 +25,15 @@ export class SubHeaderComponent implements OnInit {
   constructor(private subHeaderService: SubHeaderService) { }
 
   ngOnInit() {
-    this.subHeaderService.fetchSubHeaderData().subscribe(responseList => {
-      this.users       = responseList[0];
-      this.average     = responseList[1];
-      this.males       = responseList[2];
-      this.females     = responseList[3];
-      this.collections = responseList[4];
+    this.subHeaderService
+      .fetchSubHeaderData()
+      .subscribe(responseList => {
+        this.users       = responseList[0];
+        this.average     = responseList[1];
+        this.males       = responseList[2];
+        this.females     = responseList[3];
+        this.collections = responseList[4];
     });
-    console.log('users', this.average);
   }
 
 
