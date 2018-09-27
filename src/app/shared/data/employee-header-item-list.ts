@@ -1,17 +1,4 @@
-import { EmployeeHeaderModel, EmployeeSideHeaderModel } from '../interfaces/employee-header-item-model';
-
-
-export const header: EmployeeHeaderModel[] = [
-  {
-    title : 'Department'
-  },
-  {
-    title : 'Sort by'
-  },
-  {
-    title : 'Location'
-  }
-];
+import { EmployeeSideHeaderModel } from '../interfaces/employee-header-item-model';
 
 export const sideHeader: EmployeeSideHeaderModel[] = [
   {
