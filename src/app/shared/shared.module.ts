@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MenuItemListService } from './services/menu-item-list.service';
 import { SubHeaderService } from './services/sub-header-item-list.service';
-
+import { EmployeeHeaderService } from './services/employee-header-item-list.service';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { SubHeaderService } from './services/sub-header-item-list.service';
   declarations: [],
   providers: [
     MenuItemListService,
-    SubHeaderService
+    SubHeaderService,
+    EmployeeHeaderService
   ],
   exports: [
     CommonModule
