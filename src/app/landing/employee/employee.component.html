@@ -5,17 +5,20 @@
               <div class="pt-md-2 py-md-2 dropdown-sort">
                 <label for="email" class="header-label mr-md-1">Department:</label>
                 <div class="btn-group" dropdown>
-                    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                    <button id="button-basic" 
+                            dropdownToggle type="button" 
+                            class="btn btn-primary dropdown-toggle"
                             aria-controls="dropdown-basic">
                       Button dropdown <span class="caret"></span>
                     </button>
-                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                        role="menu" aria-labelledby="button-basic">
-                      <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-                      <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-                      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-                      <li class="divider dropdown-divider"></li>
-                      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                    <ul id="dropdown-basic" 
+                        *dropdownMenu 
+                        class="dropdown-menu"
+                        role="menu" 
+                        aria-labelledby="button-basic">
+                      <li role="menuitem"
+                          *ngFor="let department of this.departments">
+                        <a class="dropdown-item" href="#">{{department.name}}</a>
                       </li>
                     </ul>
                 </div>           
@@ -25,17 +28,19 @@
           <div class="pt-md-2 py-md-2 dropdown-sort">
             <label for="email" class="header-label mr-md-1">Sort by:</label>
             <div class="btn-group" dropdown>
-                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                <button id="button-basic" 
+                        dropdownToggle type="button" 
+                        class="btn btn-primary dropdown-toggle"
                         aria-controls="dropdown-basic">
                   Button dropdown <span class="caret"></span>
                 </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                <ul id="dropdown-basic" 
+                    *dropdownMenu 
+                    class="dropdown-menu"
                     role="menu" aria-labelledby="button-basic">
-                  <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li class="divider dropdown-divider"></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                  <li role="menuitem"
+                      *ngFor="let position of this.positions">
+                    <a class="dropdown-item" href="#">{{position.name}}</a>
                   </li>
                 </ul>
             </div>           
@@ -45,17 +50,20 @@
           <div class="pt-md-2 py-md-2 dropdown-sort">
             <label for="email" class="header-label mr-md-1">Location:</label>
             <div class="btn-group" dropdown>
-                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                <button id="button-basic" 
+                        dropdownToggle 
+                        type="button" 
+                        class="btn btn-primary dropdown-toggle"
                         aria-controls="dropdown-basic">
                   Button dropdown <span class="caret"></span>
                 </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                <ul id="dropdown-basic" 
+                    *dropdownMenu 
+                    class="dropdown-menu"
                     role="menu" aria-labelledby="button-basic">
-                  <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li class="divider dropdown-divider"></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                  <li role="menuitem"
+                      *ngFor="let location of this.locations">
+                    <a class="dropdown-item" href="#">{{location.address}}</a>
                   </li>
                 </ul>
             </div>   
