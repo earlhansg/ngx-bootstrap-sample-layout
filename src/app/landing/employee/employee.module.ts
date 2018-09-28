@@ -7,6 +7,8 @@ import { AppBootstrapModule } from '@app/core/app-bootstrap.module';
 
 import { EmployeeComponent } from './employee.component';
 
+import { EmployeeService } from './employee.component.service';
+
 
 
 @NgModule({
@@ -22,7 +24,7 @@ import { EmployeeComponent } from './employee.component';
   exports: [
     EmployeeComponent
   ],
-  providers: [],
+  providers: [EmployeeService],
   entryComponents: []
 })
 export class EmployeeModule { }
