@@ -8,6 +8,7 @@ import { AppBootstrapModule } from '@app/core/app-bootstrap.module';
 import { EmployeeComponent } from './employee.component';
 
 import { EmployeeService } from './employee.component.service';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 
 
@@ -19,7 +20,8 @@ import { EmployeeService } from './employee.component.service';
     AppBootstrapModule
   ],
   declarations: [
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeListComponent
   ],
   exports: [
     EmployeeComponent
