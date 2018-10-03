@@ -20,3 +20,13 @@
 .notactive {
     background-color: red;
 }
+
+@media only screen and (max-width: 768px) {
+    .table thead th {
+        font-size: 13px;
+    }
+    
+    .table td, .table th {
+        font-size: 12px;
+    }
+ }

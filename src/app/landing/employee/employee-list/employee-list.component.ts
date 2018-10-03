@@ -20,7 +20,6 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService
       .fetchEmployee()
       .subscribe(response => this.checkDataEmployee(response));
-      console.log('my data', this.employee);
   }
 
   checkDataEmployee(data: any) {
