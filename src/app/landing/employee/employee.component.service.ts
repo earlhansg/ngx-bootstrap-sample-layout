@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { Observable, forkJoin, of } from 'rxjs';
 
-import { department, position, location } from './data/employee-item-list';
+import { department, position, location, employee } from './data/employee-item-list';
+
+import { EmployeeModel } from './interface/employee.component.model';
 
 @Injectable()
 export class EmployeeService {
@@ -23,6 +25,10 @@ constructor() { }
     response3.forEach(item => this.locations.push(item));
 
     return forkJoin([of(this.departments), of(this.positions), of(this.locations)]);
+  }
+
+  fetchEmployee(): Observable<EmployeeModel[]> {
+    return of(employee);
   }
 
 }
