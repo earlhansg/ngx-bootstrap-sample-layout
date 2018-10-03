@@ -1,6 +1,7 @@
 import { DepartmentModel,
          PositionModel,
-         LocationModel   } from '../interface/employee.component.model';
+         LocationModel,
+         EmployeeModel  } from '../interface/employee.component.model';
 
 export const department: DepartmentModel[] = [
   {

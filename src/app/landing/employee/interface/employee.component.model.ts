@@ -15,3 +15,15 @@ export interface LocationModel {
     details ?: string;
     icon    ?: string;
 }
+
+export interface EmployeeModel {
+    firstname   : string;
+    lastname    : string;
+    position    : string;
+    address     : string;
+    birthdate   : string;
+    department  : string;
+    sex         : string;
+    location    : string;
+    active      : boolean;
+}
