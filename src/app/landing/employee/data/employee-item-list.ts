@@ -76,7 +76,7 @@ export const employee: EmployeeModel[] = [
     lastname   : 'Cruda',
     position   : 'CSR',
     address    : 'Iponan Cagayan de Oro City',
-    birthdate  : 'November 7 1994',
+    birthdate  : 'November 7, 1994',
     department : 'Production',
     sex        : 'male',
     location   : 'Bukidnon',

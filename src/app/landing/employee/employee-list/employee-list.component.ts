@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { EmployeeModel } from '../interface/employee.component.model';
 
@@ -11,12 +11,26 @@ import { EmployeeService } from '../employee.component.service';
 })
 export class EmployeeListComponent implements OnInit {
 
+  public employee : EmployeeModel[];
+  @Input() ngClass: string | string[] | Set<string> | { [klass: string]: any; };
+
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
     this.employeeService
       .fetchEmployee()
-      .subscribe(response => console.log(response));
+      .subscribe(response => this.checkDataEmployee(response));
+      console.log('my data', this.employee);
+  }
+
+  checkDataEmployee(data: any) {
+    const users = data;
+    users.map(user => {
+      user.fullname = `${user.firstname} ${user.lastname}`;
+      user.status   = user.active ? 'active' : '';
+      user.gender   = user.sex === 'male' ? 'M' : 'F';
+    });
+    this.employee = users;
   }
 
 }
