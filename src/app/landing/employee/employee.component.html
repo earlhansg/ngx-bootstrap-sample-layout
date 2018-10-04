@@ -3,69 +3,45 @@
       <div class="row">
           <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3">
               <div class="pt-md-2 py-md-2 dropdown-sort">
-                <label for="email" class="header-label mr-md-1">Department:</label>
-                <div class="btn-group" dropdown>
-                    <button id="button-basic" 
-                            dropdownToggle type="button" 
-                            class="btn btn-primary dropdown-toggle"
-                            aria-controls="dropdown-basic">
-                      Button dropdown <span class="caret"></span>
-                    </button>
-                    <ul id="dropdown-basic" 
-                        *dropdownMenu 
-                        class="dropdown-menu"
-                        role="menu" 
-                        aria-labelledby="button-basic">
-                      <li role="menuitem"
-                          *ngFor="let department of this.departments">
-                        <a class="dropdown-item" href="#">{{department.name}}</a>
-                      </li>
-                    </ul>
-                </div>           
+                <div class="form-group">
+                  <label for="email" class="header-label mr-md-1">Department:</label>
+                  <select class="custom-select">
+                    <option selected disabled>Please select ..</option>
+                    <option *ngFor="let department of this.departments">
+                      {{department.name}}
+                    </option>
+                  </select>
+                </div>
               </div>
           </div>
         <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3">
           <div class="pt-md-2 py-md-2 dropdown-sort">
-            <label for="email" class="header-label mr-md-1">Sort by:</label>
+            
             <div class="btn-group" dropdown>
-                <button id="button-basic" 
-                        dropdownToggle type="button" 
-                        class="btn btn-primary dropdown-toggle"
-                        aria-controls="dropdown-basic">
-                  Button dropdown <span class="caret"></span>
-                </button>
-                <ul id="dropdown-basic" 
-                    *dropdownMenu 
-                    class="dropdown-menu"
-                    role="menu" aria-labelledby="button-basic">
-                  <li role="menuitem"
-                      *ngFor="let position of this.positions">
-                    <a class="dropdown-item" href="#">{{position.name}}</a>
-                  </li>
-                </ul>
+                <div class="form-group">
+                    <label for="email" class="header-label mr-md-1">Sort by:</label>
+                    <select class="custom-select">
+                      <option selected disabled>Please select ..</option>
+                      <option *ngFor="let position of this.positions">
+                        {{position.name}}
+                      </option>
+                    </select>
+                </div>
             </div>           
           </div>
         </div>
         <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3">
           <div class="pt-md-2 py-md-2 dropdown-sort">
-            <label for="email" class="header-label mr-md-1">Location:</label>
             <div class="btn-group" dropdown>
-                <button id="button-basic" 
-                        dropdownToggle 
-                        type="button" 
-                        class="btn btn-primary dropdown-toggle"
-                        aria-controls="dropdown-basic">
-                  Button dropdown <span class="caret"></span>
-                </button>
-                <ul id="dropdown-basic" 
-                    *dropdownMenu 
-                    class="dropdown-menu"
-                    role="menu" aria-labelledby="button-basic">
-                  <li role="menuitem"
-                      *ngFor="let location of this.locations">
-                    <a class="dropdown-item" href="#">{{location.address}}</a>
-                  </li>
-                </ul>
+                <div class="form-group">
+                    <label for="email" class="header-label mr-md-1">Location:</label>
+                    <select class="custom-select">
+                      <option selected disabled>Please select ..</option>
+                      <option *ngFor="let location of this.locations">
+                        {{location.address}}
+                      </option>
+                    </select>
+                </div>
             </div>   
           </div>
         </div>

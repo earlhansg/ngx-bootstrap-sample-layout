@@ -13,10 +13,11 @@ import { EmployeeService } from './employee.component.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-  public sideHeaders : EmployeeSideHeaderModel[];
+  public sideHeaders  : EmployeeSideHeaderModel[];
   public departments  : DepartmentModel[];
   public positions    : PositionModel[];
   public locations    : LocationModel[];
+  public department   : any;
 
   constructor(private employeeHeaderService: EmployeeHeaderService,
               private employeeService: EmployeeService) { }
@@ -33,6 +34,14 @@ export class EmployeeComponent implements OnInit {
         this.positions   = employeeDataList[1];
         this.locations   = employeeDataList[2];
       });
+  }
+
+  showValue(data: any) {
+    console.log(data);
+  }
+  showDepartment(item: any) {
+    // const department = item = undefined ? 'Choose One';
+    console.log(item);
   }
 
 }
