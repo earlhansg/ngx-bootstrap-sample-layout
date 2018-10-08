@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppBootstrapModule } from '@app/core/app-bootstrap.module';
@@ -17,7 +19,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     CommonModule,
     RouterModule,
     AngularFontAwesomeModule,
-    AppBootstrapModule
+    AppBootstrapModule,
+    FormsModule
   ],
   declarations: [
     EmployeeComponent,

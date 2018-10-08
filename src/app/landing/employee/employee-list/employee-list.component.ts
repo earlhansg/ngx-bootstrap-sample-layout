@@ -1,20 +1,37 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,
+         OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 
 import { EmployeeModel } from '../interface/employee.component.model';
 
 import { EmployeeService } from '../employee.component.service';
+import { employee } from '@app/landing/employee/data/employee-item-list';
 
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
-export class EmployeeListComponent implements OnInit {
+export class EmployeeListComponent implements OnChanges, OnInit {
 
-  public employee : EmployeeModel[];
-  @Input() ngClass: string | string[] | Set<string> | { [klass: string]: any; };
+  public employee     : EmployeeModel[];
+  public filterList   = employee;
+  @Input() ngClass    : string | string[] | Set<string> | { [klass: string]: any; };
+  @Input() department : string;
+  private _department: any;
+  // @Input() position   : string;
+  // @Input() location   : string;
 
   constructor(private employeeService: EmployeeService) { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const department: SimpleChange = changes.department;
+    this._department = department;
+    console.log('bag.o nga department', this._department.currentValue);
+    if (this._department.currentValue !== undefined) {
+      console.log('undefined');
+      this.filterEmployee(this._department.currentValue);
+    }
+  }
 
   ngOnInit() {
     this.employeeService
@@ -32,4 +49,8 @@ export class EmployeeListComponent implements OnInit {
     this.employee = users;
   }
 
+  filterEmployee(data : any) : void {
+    this.filterList = this.employee.filter(x => x.department === data);
+    console.log(this.employee);
+  }
 }

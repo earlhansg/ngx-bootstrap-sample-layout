@@ -4,7 +4,7 @@
         <table class="table table-hover">
             <thead>
               <tr>
-                <th>Employee</th>
+                <th (click)="testing()">Employee</th>
                 <th>Position</th>
                 <th>Department</th>
                 <th>Birthday</th>
@@ -16,7 +16,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let user of employee">
+              <tr *ngFor="let user of filterList">
                 <td>{{user.fullname}}</td>
                 <td>{{user.position}}</td>
                 <td>{{user.department}}</td>

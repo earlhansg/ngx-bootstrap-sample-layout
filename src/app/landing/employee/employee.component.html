@@ -4,10 +4,12 @@
           <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3">
               <div class="pt-md-2 py-md-2 dropdown-sort">
                 <div class="form-group">
-                  <label for="email" class="header-label mr-md-1">Department:</label>
-                  <select class="custom-select">
+                  <label for="department" class="header-label mr-md-1">Department:</label>
+                  <select class="custom-select"
+                          [(ngModel)]="selectedDepartment">
                     <option selected disabled>Please select ..</option>
-                    <option *ngFor="let department of this.departments">
+                    <option *ngFor="let department of this.departments" 
+                            [value]="department.name">
                       {{department.name}}
                     </option>
                   </select>
@@ -59,6 +61,6 @@
             </button>
         </div>
       </div>
-        <app-employee-list></app-employee-list> 
+        <app-employee-list [department]="selectedDepartment"></app-employee-list>
     </div>
 </div>
