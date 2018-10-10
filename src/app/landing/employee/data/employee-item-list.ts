@@ -20,31 +20,34 @@ export const department: DepartmentModel[] = [
 
 export const position: PositionModel[] = [
     {
-      name : 'manager'
+      name : 'TSR'
     },
     {
-      name : 'supervisor'
+      name : 'Admin'
     },
     {
-      name : 'admin'
+      name : 'CSR'
     },
     {
-      name : 'csr'
+      name : 'Auditor'
+    },
+    {
+      name : 'Cashier'
     }
 ];
 
 export const location: LocationModel[] = [
     {
-      address : 'Cagayan de Oro City'
+      address : 'CDO'
     },
     {
-      address : 'Butuan City'
+      address : 'Cebu'
     },
     {
       address : 'Bukidnon'
     },
     {
-      address : 'Davao City'
+      address : 'Davao'
     }
 ];
 

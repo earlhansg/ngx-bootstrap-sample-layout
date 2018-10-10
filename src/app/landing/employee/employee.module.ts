@@ -11,6 +11,7 @@ import { EmployeeComponent } from './employee.component';
 
 import { EmployeeService } from './employee.component.service';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -20,11 +21,13 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     RouterModule,
     AngularFontAwesomeModule,
     AppBootstrapModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    SearchComponent
   ],
   exports: [
     EmployeeComponent

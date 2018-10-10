@@ -1,5 +1,5 @@
 import { Component, OnInit, Input,
-         OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+         OnChanges, ChangeDetectorRef } from '@angular/core';
 
 import { EmployeeModel } from '../interface/employee.component.model';
 
@@ -13,30 +13,41 @@ import { employee } from '@app/landing/employee/data/employee-item-list';
 })
 export class EmployeeListComponent implements OnChanges, OnInit {
 
-  public employee     : EmployeeModel[];
-  public filterList   = employee;
-  @Input() ngClass    : string | string[] | Set<string> | { [klass: string]: any; };
-  @Input() department : string;
-  private _department: any;
-  // @Input() position   : string;
-  // @Input() location   : string;
+  @Input() ngClass     : string | string[] | Set<string> | { [klass: string]: any; };
+  @Input() groupFilters: Object;
 
-  constructor(private employeeService: EmployeeService) { }
+  employee     : any[] = [];
+  filteredUsers: any[] = [];
 
-  ngOnChanges(changes: SimpleChanges) {
-    const department: SimpleChange = changes.department;
-    this._department = department;
-    console.log('bag.o nga department', this._department.currentValue);
-    if (this._department.currentValue !== undefined) {
-      console.log('undefined');
-      this.filterEmployee(this._department.currentValue);
-    }
+  constructor(private employeeService: EmployeeService,
+              private ref: ChangeDetectorRef) { }
+
+  ngOnInit(): void {
+    this.loadUsers();
   }
 
-  ngOnInit() {
+  ngOnChanges(): void {
+    console.log(this.groupFilters);
+    if (this.groupFilters) this.filterUserList(this.groupFilters, this.employee);
+  }
+
+  filterUserList(filters: any, employee: any): void {
+    this.filteredUsers = this.employee;
+
+    const keys = Object.keys(filters);
+    const filterUser = employee => keys.every(key => employee[key] === filters[key]);
+
+    this.filteredUsers = this.employee.filter(filterUser);
+
+    this.ref.detectChanges();
+  }
+
+  loadUsers(): void {
     this.employeeService
       .fetchEmployee()
       .subscribe(response => this.checkDataEmployee(response));
+
+    this.filteredUsers = this.filteredUsers.length > 0 ?  this.filteredUsers : this.employee;
   }
 
   checkDataEmployee(data: any) {
@@ -46,11 +57,8 @@ export class EmployeeListComponent implements OnChanges, OnInit {
       user.status   = user.active ? 'active' : '';
       user.gender   = user.sex === 'male' ? 'M' : 'F';
     });
+
     this.employee = users;
   }
 
-  filterEmployee(data : any) : void {
-    this.filterList = this.employee.filter(x => x.department === data);
-    console.log(this.employee);
-  }
 }

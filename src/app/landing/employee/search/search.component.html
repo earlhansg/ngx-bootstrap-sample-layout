@@ -1,0 +1,74 @@
+<div id="employee" class="row justify-content-center mt-lg-4 mt-sm-4">
+    <div class="col-11 bg-white"
+         [formGroup]="form">
+      <div class="row">
+          <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3">
+              <div class="pt-md-2 py-md-2 dropdown-sort">
+                <div class="form-group">
+                  <label for="department" class="header-label mr-md-1">Department:</label>
+                  <select class="custom-select"
+                          formControlName="department"
+                          (change)="search(form.value)">
+                    <option value="">Please select ..</option>
+                    <option *ngFor="let department of this.departments" 
+                            [value]="department.name">
+                      {{department.name}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3">
+            <div class="pt-md-2 py-md-2 dropdown-sort">
+              
+              <div class="btn-group" dropdown>
+                  <div class="form-group">
+                      <label for="email" class="header-label mr-md-1">Sort by:</label>
+                      <select class="custom-select"
+                              formControlName="position"
+                              (change)="search(form.value)">
+                        <option value="">Please select ..</option>
+                        <option *ngFor="let position of this.positions" 
+                                [value]="position.name">
+                          {{position.name}}
+                        </option>
+                      </select>
+                  </div>
+              </div>           
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3">
+            <div class="pt-md-2 py-md-2 dropdown-sort">
+              <div class="btn-group" dropdown>
+                  <div class="form-group">
+                      <label for="email" class="header-label mr-md-1">Location:</label>
+                      <select class="custom-select"
+                              formControlName="location"
+                              (change)="search(form.value)">
+                        <option value="">Please select ..</option>
+                        <option *ngFor="let location of this.locations" 
+                                [value]="location.address">
+                          {{location.address}}
+                        </option>
+                      </select>
+                  </div>
+              </div>   
+            </div>
+          </div>
+        <!-- </form>   -->
+        <div class="col-xl-3 col-lg-6 col-md-3">
+            <ul class="nav justify-content-lg-end">
+                <li class="nav-item ml-md-1 mr-md-2"
+                    *ngFor="let sideHeader of this.sideHeaders">
+                  <a class="nav-link" href="#">
+                    <fa [name]="sideHeader.icon"></fa>
+                  </a>
+                </li>
+            </ul>
+            <button class="btn-bars navbar-toggler custom-toggler border-0">
+                <fa name="bars" size="2x"></fa>
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
