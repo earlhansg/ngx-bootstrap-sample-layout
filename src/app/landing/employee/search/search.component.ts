@@ -6,8 +6,8 @@ import { EmployeeHeaderService } from '@app/shared/services/employee-header-item
 
 import { EmployeeSideHeaderModel } from '@app/shared/interfaces/employee-header-item-model';
 import { DepartmentModel,
-           PositionModel,
-           LocationModel } from '../interface/employee.component.model';
+         PositionModel,
+         LocationModel } from '../interface/employee.component.model';
 
 @Component({
   selector: 'app-search',
